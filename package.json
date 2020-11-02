@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ethercluster-website"
+    "url": "https://github.com/scriptex/github-pages-vuepress"
   },
   "author": "Stevan Lohja",
   "license": "MIT",
