@@ -27,12 +27,12 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    base: '/ethercluster-website/',
-    repo: 'etccooperative/ethercluster-website/',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
-    lastUpdated: false,
+    base: '/',
+    // repo: '/etccooperative/ethercluster-website/',
+    // editLinks: false,
+    // docsDir: '',
+    // editLinkText: '',
+    // lastUpdated: false,
     nav: [
       {
         text: 'Docs',
