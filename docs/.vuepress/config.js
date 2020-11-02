@@ -28,9 +28,9 @@ module.exports = {
    */
   themeConfig: {
     base: '/ethercluster-website/',
-    // repo: '/etccooperative/ethercluster-website/',
+    repo: '/etccooperative/ethercluster-website/',
     // editLinks: false,
-    // docsDir: '',
+    docsDir: 'docs',
     // editLinkText: '',
     // lastUpdated: false,
     nav: [
