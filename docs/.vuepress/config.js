@@ -27,7 +27,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
-    repo: '/etccooperative/ethercluster-website/',
+    repo: '/ethercluster-website/',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
