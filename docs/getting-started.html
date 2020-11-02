@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Getting Started | Ethercluster</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    
+    <meta name="description" content="">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.f1075b4d.css" as="style"><link rel="preload" href="/assets/js/app.973c1df1.js" as="script"><link rel="preload" href="/assets/js/2.b53210af.js" as="script"><link rel="preload" href="/assets/js/14.942f3b6f.js" as="script"><link rel="prefetch" href="/assets/js/10.8fe7c758.js"><link rel="prefetch" href="/assets/js/11.8de31520.js"><link rel="prefetch" href="/assets/js/12.49ddc1df.js"><link rel="prefetch" href="/assets/js/13.bf539fce.js"><link rel="prefetch" href="/assets/js/15.39d881d0.js"><link rel="prefetch" href="/assets/js/16.907c6cb6.js"><link rel="prefetch" href="/assets/js/3.08eb0aa1.js"><link rel="prefetch" href="/assets/js/4.e0e25d39.js"><link rel="prefetch" href="/assets/js/5.efe1f8c4.js"><link rel="prefetch" href="/assets/js/6.2f67cc99.js"><link rel="prefetch" href="/assets/js/7.b0912243.js"><link rel="prefetch" href="/assets/js/8.5e045f4e.js"><link rel="prefetch" href="/assets/js/9.8ea5d59a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.f1075b4d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Ethercluster</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/docs/" class="nav-link router-link-active">
+  Docs
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/docs/" class="nav-link router-link-active">
+  Docs
+</a></div><div class="nav-item"><a href="/api/" class="nav-link">
+  API
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Docs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/docs/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/docs/concepts.html" class="sidebar-link">Core Concepts</a></li><li><a href="/docs/getting-started.html" aria-current="page" class="active sidebar-link">Getting Started</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/docs/getting-started.html#step-01-setup-google-cloud" class="sidebar-link">Step 01 - Setup Google Cloud</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#step-02-install-terraform" class="sidebar-link">Step 02 - Install Terraform</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#step-03-create-a-terraform-configuration-for-gke" class="sidebar-link">Step 03 - Create a Terraform configuration for GKE</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#understanding-our-terraform-configuration-file" class="sidebar-link">Understanding our Terraform configuration file</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#step-04-terraform-plan-and-apply-infrastructure" class="sidebar-link">Step 04 - Terraform Plan and Apply infrastructure</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#step-05-final-cluster-setup" class="sidebar-link">Step 05 - Final cluster setup</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#scaling-pods" class="sidebar-link">Scaling Pods</a></li><li class="sidebar-sub-header"><a href="/docs/getting-started.html#ssl-configuration" class="sidebar-link">SSL Configuration</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting Started</h1> <p>This guide will help you build your own Ethereum Classic API service using Ethercluster. This guide currently features Ethercluster deployment on Google Cloud Platform.</p> <h2 id="step-01-setup-google-cloud"><a href="#step-01-setup-google-cloud" class="header-anchor">#</a> Step 01 - Setup Google Cloud</h2> <ul><li>Signup for a <a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> account and <a href="https://console.cloud.google.com/projectcreate" target="_blank" rel="noopener noreferrer">create a new project<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. You can conveniently name your project, <code>ethercluster</code>.</li></ul> <img width="540" alt="gcp_project" src="https://user-images.githubusercontent.com/10556209/96285459-9c85ce00-0fa4-11eb-9407-277b6ee700ca.png"> <ul><li><p>Setup <a href="https://cloud.google.com/billing/docs/how-to/modify-project" target="_blank" rel="noopener noreferrer">billing<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> if you're going to pursue making your Ethercluster.</p></li> <li><p>Enable <strong>Compute Engine API</strong>, <strong>Cloud Shell API</strong>, and <strong>Kubernetes Engine API</strong> which can be found in the <a href="https://console.cloud.google.com/apis?_ga=2.172155431.56694028.1602866660-1600774775.1602866660" target="_blank" rel="noopener noreferrer">Marketplace<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. For example:</p></li></ul> <img width="497" alt="gcp_enable_api" src="https://user-images.githubusercontent.com/10556209/96285814-0e5e1780-0fa5-11eb-95ff-a3a3d571bf0a.png"> <ul><li><a href="https://cloud.google.com/docs/authentication/getting-started" target="_blank" rel="noopener noreferrer">Setup Credentials<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> which will generate a JSON file for you to download. This will be used to easily authenticate into Google Cloud from your local terminal.</li></ul> <h2 id="step-02-install-terraform"><a href="#step-02-install-terraform" class="header-anchor">#</a> Step 02 - Install Terraform</h2> <p><a href="https://www.terraform.io/" target="_blank" rel="noopener noreferrer">Terraform<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> is infra-as-code to allow you to provision your cloud infrastructure in a way that's clear and easy to roll-back and version control.</p> <p>This allows any changes you make to your cloud architecture to be reflected in code and saved, so that any new changes you add can be tracked and debugged.</p> <ul><li><a href="https://www.terraform.io/downloads.html" target="_blank" rel="noopener noreferrer">Download, unpack, and install Terraform<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> via release binary for your operating system https://www.terraform.io/downloads.html.</li></ul> <p>Downloading binary on Linux:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">wget</span> https://releases.hashicorp.com/terraform/0.13.4/terraform_0.13.4_linux_amd64.zip
+</code></pre></div><p>Unpack files:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">unzip</span> terraform_0.13.4_linux_amd64.zip
+</code></pre></div><p>At this point the executable <code>terraform</code> binary can be run. However, you may want to move it in a more appropriate location and add to your PATH.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">sudo</span> <span class="token function">mv</span> terraform /bin/
+</code></pre></div><p>or move anywhere else and export to PATH</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mv</span> terraform /<span class="token environment constant">$HOME</span>
+</code></pre></div><div class="language-shell extra-class"><pre class="language-shell"><code><span class="token builtin class-name">export</span> <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token string">&quot;<span class="token environment constant">$PATH</span>:/<span class="token environment constant">$HOME</span>/terraform&quot;</span>
+</code></pre></div><p>Run terraform from a terminal</p> <div class="language-shell extra-class"><pre class="language-shell"><code>terraform
+</code></pre></div><h2 id="step-03-create-a-terraform-configuration-for-gke"><a href="#step-03-create-a-terraform-configuration-for-gke" class="header-anchor">#</a> Step 03 - Create a Terraform configuration for GKE</h2> <p>Create directory for your Terraform project and change directory into it:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">mkdir</span> Ethercloud <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> Ethercloud
+</code></pre></div><p>Initialize a new Terraform project:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>terraform init
+</code></pre></div><p>Terraform will return the following since there's no existing Terraform config files.</p> <div class="language- extra-class"><pre class="language-text"><code>Terraform initialized in an empty directory!
+
+The directory has no Terraform configuration files. You may begin working
+with Terraform immediately by creating Terraform configuration files.
+</code></pre></div><p>Now, create a new Terraform configuration file:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">touch</span> ethercloud.tf
+</code></pre></div><p>Using your preferred editor, we'll have to specify our Ethercluster infrastructure in <code>ethercloud.tf</code> like so:</p> <div class="language- extra-class"><pre class="language-text"><code>provider &quot;google&quot; {
+    project = &quot;ethercluster&quot;
+    region = &quot;us-central1&quot;       
+    zone = &quot;us-central1-c&quot;
+}
+
+resource &quot;google_container_cluster&quot; &quot;primary&quot; {
+    name = &quot;ether-cluster&quot;
+    
+    remove_default_node_pool = true
+    initial_node_count = 1
+
+    master_auth {
+        username = &quot;&quot;
+        password = &quot;&quot;
+    }
+}
+
+resource &quot;google_container_node_pool&quot; &quot;primary_preemptible_nodes&quot; {
+    name = &quot;my-node-pool&quot;
+    cluster = &quot;${google_container_cluster.primary.name}&quot;
+    node_count = 3
+    
+    node_config {
+        preemptible = true
+        machine_type = &quot;n1-standard-1&quot;
+
+        metadata = {
+            disable-legacy-endpoints = &quot;true&quot;
+        }
+
+        oauth_scopes = [
+            &quot;https://www.googleapis.com/auth/logging.write&quot;,
+            &quot;https://www.googleapis.com/auth/monitoring&quot;,
+        ]
+    }
+}
+
+output &quot;client_certificate&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.client_certificate}&quot;
+}
+
+output &quot;client_key&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.client_key}&quot;
+}
+
+output &quot;cluster_ca_certificate&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.cluster_ca_certificate}&quot;
+}
+
+resource &quot;google_compute_address&quot; &quot;ip_address&quot; {
+    name = &quot;ethercluster-address&quot;
+}
+</code></pre></div><h2 id="understanding-our-terraform-configuration-file"><a href="#understanding-our-terraform-configuration-file" class="header-anchor">#</a> Understanding our Terraform configuration file</h2> <h4 id="provider"><a href="#provider" class="header-anchor">#</a> Provider</h4> <div class="language-tf extra-class"><pre class="language-text"><code>provider &quot;google&quot; {
+    project = &quot;ethercloud&quot;
+    region = &quot;us-central1&quot;
+    zone = &quot;us-central1-c&quot;
+}
+</code></pre></div><p>What we did here was specify provider as <code>google</code>, gave it a project name <code>ethercloud</code>, and then added the region <code>us-central-1</code> and the zone <code>us-central1-c</code>. You don't have to use the same names and regions, but this will be what I use for the purpose of this guide.</p> <h3 id="gke"><a href="#gke" class="header-anchor">#</a> GKE</h3> <div class="language- extra-class"><pre class="language-text"><code>resource &quot;google_container_cluster&quot; &quot;primary&quot; {
+    name = &quot;ethercluster&quot;
+
+    remove_default_node_pool = true
+    initial_node_count = 1
+
+    master_auth {
+        username = &quot;&quot;
+        password = &quot;&quot;
+    }
+}
+</code></pre></div><p>This specifies that we want a GKE cluster we will call <code>primary</code>. We also specify the cluster name as <code>ethercluster</code> We add an initial node count of <code>1</code>, but we can't specify our own Kubernetes node pool first, so we use the initial node count and then we delete it. We have our <code>master_auth</code> set to empty because we don't want to use any custom auth.</p> <div class="language- extra-class"><pre class="language-text"><code>resource &quot;google_container_node_pool&quot; &quot;primary_preemptible_nodes&quot; {
+    name = &quot;my-node-pool&quot;
+    cluster = &quot;${google_container_cluster.primary.name}&quot;
+    node_count = 3
+
+    node_config {
+        preemptible = true
+        machine_type = &quot;n1-standard-1&quot;
+
+        metadata = {
+            disable-legacy-endpoints = &quot;true&quot;
+        }
+
+        oauth_scopes = [
+            &quot;https://www.googleapis.com/auth/logging.write&quot;,
+            &quot;https://www.googleapis.com/auth/monitoring&quot;,
+        ]
+    }
+}
+</code></pre></div><p>Here we are basically specifying the node pool with 3 nodes. Three nodes means three Google Compute Engine instances where we will be hosting out Kubernetes cluster. We also specify the type of instance to be <code>n1-standard-1</code>.</p> <p>For more information on this setup, checkout the guide from Terraform <a href="https://www.terraform.io/docs/providers/google/r/container_cluster.html" target="_blank" rel="noopener noreferrer">here<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>Moving forward, we want to add the Cluster certificate and a static IP address in case you chose to expose your RPC endpoint publicly over SSL. It'll be easier to assign it to a static IP address you created on GKE so it doesn't change addresses every time you modify it.</p> <div class="language- extra-class"><pre class="language-text"><code>output &quot;client_certificate&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.client_certificate}&quot;
+}
+
+output &quot;client_key&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.client_key}&quot;
+}
+
+output &quot;cluster_ca_certificate&quot; {
+    value = &quot;${google_container_cluster.primary.master_auth.0.cluster_ca_certificate}&quot;
+}
+
+resource &quot;google_compute_address&quot; &quot;ip_address&quot; {
+    name = &quot;ethercluster-address&quot;
+}
+</code></pre></div><p>Here, we basically specify the client key and certificate, as well as cluster certificate and ip_address. We will call this address <code>ethercluster-address</code>.</p> <p>Great, we finally have the entire code we need to get started. Let's start terraforming!</p> <h2 id="step-04-terraform-plan-and-apply-infrastructure"><a href="#step-04-terraform-plan-and-apply-infrastructure" class="header-anchor">#</a> Step 04 - Terraform <code>Plan</code> and <code>Apply</code> infrastructure</h2> <p>Now that your infrastructure is defined in your terraform configuration file, it's time to <code>terraform plan</code> &amp; <code>terraform apply</code>.</p> <p>Terraform plan allows you to see what changes Terraform will do to your file without making the changes. It also is helpful for catching bugs.</p> <p>Run <code>terraform plan</code>:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>terraform plan
+</code></pre></div><p>Terraform will analyse your code and return an output like the following:</p> <div class="language- extra-class"><pre class="language-text"><code>Refreshing Terraform state in-memory prior to plan...
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # google_compute_address.ip_address will be created
+  + resource &quot;google_compute_address&quot; &quot;ip_address&quot; {
+      + address_type       = &quot;EXTERNAL&quot;
+      + name               = &quot;ethercluster-address&quot;
+      *
+    }
+
+  # google_container_cluster.primary will be created
+  + resource &quot;google_container_cluster&quot; &quot;primary&quot; {
+      + name                        = &quot;ether-cluster&quot;
+      + network                     = &quot;default&quot;
+      *
+    }
+
+  # google_container_node_pool.primary_preemptible_nodes will be created
+  + resource &quot;google_container_node_pool&quot; &quot;primary_preemptible_nodes&quot; {
+      + cluster             = &quot;ether-cluster&quot;
+      + id                  = (known after apply)
+      *
+      + management {
+          * 
+        }
+
+      + node_config {
+            *
+        }
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+------------------------------------------------------------------------
+</code></pre></div><p>Note, this isn't the exact output, it'll have a lot more data in it with keys, but the values will say <code>(known after apply)</code>. This tells us that Terraform won't have the exact values for the configuration of our cloud for most of the keys until after we actually create our architecture on Google Cloud.</p> <p>To apply the configuration on Google Cloud, simply run <code>terraform apply</code>.</p> <p>Run Terraform apply:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>terraform apply
+</code></pre></div><p>Now, since you already have your project json file from Google Cloud for authing added to your PATH in previous sections, Terraform can use it to deploy your cloud architecture for you. It'll go through the same output you saw in plan but with an execution plan and then start creating your instances. It'll take a little time to create, so go have a coffee break while you wait.</p> <p>The output will look something like the following.</p> <p><img src="https://user-images.githubusercontent.com/10556209/96288555-36e81080-0fa9-11eb-8afb-0ff68611cd23.gif" alt="terraform-apply"></p> <div class="language- extra-class"><pre class="language-text"><code>An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+*
+*
+*
+Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+</code></pre></div><p>Terraform has just created your infrastructure architecture on Google Cloud. Now it's time to SSH into Google Cloud Shell.</p> <h2 id="step-05-final-cluster-setup"><a href="#step-05-final-cluster-setup" class="header-anchor">#</a> Step 05 - Final cluster setup</h2> <p>Now, at this point we have our Ethercluster node infrastructure deployed which is a fully functioning kubernetes cluster on Google Cloud. Running a node requires storage, the protocol providing client, and our desired networking for access the API.</p> <h3 id="namespace"><a href="#namespace" class="header-anchor">#</a> Namespace</h3> <p>Namespaces in Kubernetes allow us to assign a name for specific projects we are working on inside Kubernetes. It's useful if you want to organize your cluster between <code>dev</code> and <code>prod</code> namespaces for example.</p> <p>Here, we will just be using it for <code>ethercluster</code> to make it easier to see everything.</p> <p>To create a namespace, I'll be writing up a YAMl config file for Kubernetes.</p> <p>Each Kubernetes manifest file has three things:</p> <p>apiVersion (to specify which API to use)
+kind (to determine what Kubernetes component the file is)
+metadata (extra information about the manifest)</p> <p>We also have a <code>spec</code> section to specify how we want the manifest behaves, which we will see when we build our cluster.</p> <p>Picking up from where we left off in Google Cloud Shell page, let's see if <code>kubectl</code> is running. <code>kubectl</code> is a command line application that uses the Kubernetes API to interact with your cluster.</p> <p>Connect to cluster from inside Google Cloud Shell:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>gcloud container clusters get-credentials ethercloud --zone us-central1-c --project ethercloud
+</code></pre></div><p>Check if <code>kubectl</code> is working:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl
+</code></pre></div><p>The output would be similar to:</p> <div class="language- extra-class"><pre class="language-text"><code>The output should look something like this:
+
+kubectl controls the Kubernetes cluster manager.
+
+Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+
+*
+*
+*
+
+Usage:
+  kubectl [flags] [options]
+
+Use &quot;kubectl &lt;command&gt; --help&quot; for more information about a given command.
+Use &quot;kubectl options&quot; for a list of global command-line options (applies to all commands).
+</code></pre></div><p>Now, let's define namespace in the Namespace manifect file. You can use <code>vim</code> or your preferred editor:</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> ethercluster-namespace.yml
+</code></pre></div><p>Add the following:</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Namespace
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> ethercluster 
+    <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+        <span class="token key atrule">name</span><span class="token punctuation">:</span> ethercluster 
+</code></pre></div><p>This specifies that our manifest is <code>kind</code> of <code>Namespace</code>, with a name of <code>ethercluster</code>.</p> <p>Now that there is a manifest for Namespace, it has to be applied like so:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f ethercluster-namespace.yml
+</code></pre></div><p>Output:</p> <div class="language- extra-class"><pre class="language-text"><code>namespace/ethercluster created
+</code></pre></div><h3 id="volume"><a href="#volume" class="header-anchor">#</a> Volume</h3> <p>We will need to specify a <a href="https://kubernetes.io/docs/concepts/storage/storage-classes/" target="_blank" rel="noopener noreferrer">StorageClass<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for our Deployment volume. Here, we will use SSD since it's best for syncing clients.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> classic-storage-class.yml
+</code></pre></div><p>Add the following:</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">kind</span><span class="token punctuation">:</span> StorageClass
+<span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> storage.k8s.io/v1
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> classic<span class="token punctuation">-</span>ssd
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> ethercluster
+<span class="token key atrule">provisioner</span><span class="token punctuation">:</span> kubernetes.io/gce<span class="token punctuation">-</span>pd
+<span class="token key atrule">parameters</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> pd<span class="token punctuation">-</span>ssd
+  <span class="token key atrule">zones</span><span class="token punctuation">:</span> us<span class="token punctuation">-</span>central1<span class="token punctuation">-</span>c
+<span class="token key atrule">reclaimPolicy</span><span class="token punctuation">:</span> Retain
+</code></pre></div><p>Notice how we specified the provisioner to be <code>gce-pd</code>. It's to specify the Cloud Provider type of disk we want. We then specify it to be a persistent disk SSD <code>pd-ssd</code> and the zone is <code>us-central1-c</code> which is the same one we specified in Terraform, which is where our GKE cluster was created.</p> <p>Let's create the StorageClass via:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f classic-storage-class.yml
+</code></pre></div><p>This will create the StorageClass in Google Cloud which we will use when doing a Deployment later.</p> <h3 id="service"><a href="#service" class="header-anchor">#</a> Service</h3> <p>In Service, we will need to specify the ports we are interested in obtaining from our node. For the purpose of a public RPC endpoint, we will need port 8545 which is the default RPC port. If you need something more custom, like WebSockets, then port 8546 is the one you want. Here, we will only go over 8545. We add 8080 for default and 443 for SSL.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> classic-service.yml
+</code></pre></div><p>Add the following:</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> v1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Service
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+  <span class="token key atrule">labels</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> classic
+  <span class="token key atrule">name</span><span class="token punctuation">:</span> classic
+  <span class="token key atrule">namespace</span><span class="token punctuation">:</span> ethercluster
+  <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+    <span class="token key atrule">cloud.google.com/app-protocols</span><span class="token punctuation">:</span> <span class="token string">'{&quot;my-https-port&quot;:&quot;HTTPS&quot;,&quot;my-http-port&quot;:&quot;HTTP&quot;}'</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+  <span class="token key atrule">selector</span><span class="token punctuation">:</span>
+    <span class="token key atrule">app</span><span class="token punctuation">:</span> classic
+  <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> default
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">80</span>
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">80</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> rpc<span class="token punctuation">-</span>endpoint
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">8545</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">8545</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> https
+    <span class="token key atrule">port</span><span class="token punctuation">:</span> <span class="token number">443</span>
+    <span class="token key atrule">protocol</span><span class="token punctuation">:</span> TCP
+    <span class="token key atrule">targetPort</span><span class="token punctuation">:</span> <span class="token number">443</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> LoadBalancer
+  <span class="token key atrule">sessionAffinity</span><span class="token punctuation">:</span> ClientIP
+</code></pre></div><p>If you notice, we specify the <code>kind</code> to be Service here. We call the service <code>classic</code> which will allow it to auto-discover the deployment after with the same name.</p> <p>Notice how we have <code>port</code> and <code>targetPort</code> specified. It tells the Service we want to this Service's port 8545 to route to the container's port 8545.</p> <p>We specify the type to be <code>LoadBalancer</code> to expose it and allow for selecting between the different nodes we will create with Parity. We also add a sessionAffinity so that if you connect to a node assigned by the load balancer, the next time you connect to it, load balancer will reconnect you to the same node.</p> <p>Create the service:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f classic-service.yml
+</code></pre></div><p>Now, get all components of your cluster:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get all -n ethercluster
+</code></pre></div><p>Example output:</p> <div class="language- extra-class"><pre class="language-text"><code>NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)                                       AGE
+service/classic             LoadBalancer   10.00.00.00   &lt;pending&gt;      8080:30003/TCP,8545:30002/TCP,443:30001/TCP   1m
+</code></pre></div><p>The external-ip is <code>&lt;pending&gt;</code> because Kubernetes is creating an endpoint to expose which may take a few minutes. While this is running we can move onto deploying our blockchain API service.</p> <h3 id="deployment"><a href="#deployment" class="header-anchor">#</a> Deployment</h3> <p>For the rest of this exercise we'll be going over the code found in this <a href="https://github.com/ethereum-classic-cooperative/ethercluster" target="_blank" rel="noopener noreferrer">repository<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> which contains example manifest files. Before running our deployment and running a node we need to figure out what arguments we need for our Docker container image.</p> <p>We will use <a href="https://hub.docker.com/r/hyperledger/besu/tags" target="_blank" rel="noopener noreferrer">Hypereledger Besu<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> has our protocol providing client. Hyperledger Besu is an enterprise Ethereum client that can be used for Ethereum, Ethereum Classic, and related test networks.</p> <p>If you're familiar with Docker, running a Besu docker container could be done with the following:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>docker run -p <span class="token number">8545</span>:8545 -p <span class="token number">13001</span>:30303 hyperledger/besu:latest --rpc-http-enabled --network<span class="token operator">=</span>CLASSIC
+</code></pre></div><p>If you go to <code>deployments/classic/classic-besu-stateful-set.yml</code>, you'll see that the file has the <code>kind</code> value of <a href="https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/" target="_blank" rel="noopener noreferrer">StatefulSet<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. This is important since it specifies we want a stateful application that guarantees ordering and uniqueness across any rescheduling. Imagine we didn't use a statefulset here. If we deploy our container to Kubernetes, Besu begins syncing the chain from the beginning. Kubernetes can then choose to restart Pods at intervals to ensure updates. What happens in this situation is that the restart will also cause Besu to resync from the beginning, which isn't what we desire. It's why StatefulSet is the desired Deployment here.</p> <div class="language- extra-class"><pre class="language-text"><code>apiVersion: apps/v1beta1
+kind: StatefulSet
+metadata:
+  name: classic
+  namespace: ethercluster
+  labels:
+    app: classic
+</code></pre></div><p>This is the beginning of our StatefulSet deployment file. It specifies the correct namespace for Ethercluster, names our Deployment <code>classic</code> in order to be able to identify what network it is, and points the <code>kind</code> to StatefulSet.</p> <p>This isn't the only contents of the file, we will go on and define the <code>specs</code>.</p> <p>In the specs, you'll notice we have the <code>replicas</code> to be 3. This means we will be running 3 Parity nodes, which we will LoadBalance. In containers section, we specify the image <code>besu</code> from Besu's Dockerhub endpoint.</p> <p>We pass in the values to that containers such as <code>chain=classic</code>. This specifies that we want the Ethereum Classic chain to be our default network to run. This is how Kubernetes can specify the arguments for the container like Docker does in the previous example.</p> <p>We also specify we want the ports 8545 since we want to expose the RPC. We have some readinessProbe and livenessProbe in order to do health checks on the Probe. It happens by doing an HTTP GET request on port 8545 of the container on the endpoint <code>/api/health</code>, which checks if the Parity node is fully synced or not. If it's not synced up yet, it returns a 503, otherwise it will return a 200, thus passing the health check.</p> <p>We also specify a <code>volumeClaimTemplates</code> for this Deployment of 50 GB, which is what will be needed to run a full ETC node. If you want to instead run an ETH node, you'll need to adjust the value appropriately (300 GB to stay on the safe side).</p> <p>Now, we will instantiate the deployment:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f deployments/classic/classic-besu-stateful-set.yml
+</code></pre></div><p>See the deployment in action:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get all -n ethercluster
+</code></pre></div><p>Example output:</p> <div class="language- extra-class"><pre class="language-text"><code>NAME                                     READY   STATUS    RESTARTS   AGE
+pod/classic-0                            2/2     Running   0          1m
+pod/classic-1                            2/2     Running   0          1m
+pod/classic-2                            2/2     Running   0          1m
+
+NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)                                       AGE
+service/classic             LoadBalancer   10.00.00.00     109.01.01.01      8080:30003/TCP,8545:30002/TCP,443:30001/TCP   1m
+
+NAME                       READY   AGE
+statefulset.apps/classic   3/3     1m
+</code></pre></div><p>Note that the age shown above might not be exact to what you get since it's still creating each Pod 1 by 1. Why do we have three pods? It's because we specified our replica to be 3 in our deployment file.</p> <p>Each pod is created by the Statefulset, where it's mounted to a volume from <code>classic-ssd</code> that we instantiated before, and then each image of the containers are pulled and instantiated, and begin running, before the next pod is created.</p> <p>Inspect a pod individually:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl describe pod classic-0 -n ethercluster
+</code></pre></div><p>View logs:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl logs classic-0 besu -n ethercluster
+</code></pre></div><p>Woohoo! Now you have a fully functioning Ethereum Classic node with built on a kubernetes cluster.</p> <h3 id="confirm-node-is-running"><a href="#confirm-node-is-running" class="header-anchor">#</a> Confirm node is running</h3> <p>Use <a href="https://curl.haxx.se/" target="_blank" rel="noopener noreferrer">cURL<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> to call <a href="https://besu.hyperledger.org/en/stable/Reference/API-Methods/" target="_blank" rel="noopener noreferrer">JSON-RPC API methods<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>to confirm the node is running.</p> <p><em>replace <code>IP</code> with your <code>External IP</code>  from <code>kubectl get services classic -n ethercluster</code></em></p> <p><code>eth_chainId</code> returns the chain ID of the network:</p> <div class="language-json extra-class"><pre class="language-json"><code>curl -X POST --data '<span class="token punctuation">{</span><span class="token property">&quot;jsonrpc&quot;</span><span class="token operator">:</span><span class="token string">&quot;2.0&quot;</span><span class="token punctuation">,</span><span class="token property">&quot;method&quot;</span><span class="token operator">:</span><span class="token string">&quot;eth_chainId&quot;</span><span class="token punctuation">,</span><span class="token property">&quot;params&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span>' localhost<span class="token operator">:</span><span class="token number">8545</span>
+</code></pre></div><p><code>eth_syncing</code> returns the starting, current, and highest block.</p> <div class="language-json extra-class"><pre class="language-json"><code>curl -X POST --data '<span class="token punctuation">{</span><span class="token property">&quot;jsonrpc&quot;</span><span class="token operator">:</span><span class="token string">&quot;2.0&quot;</span><span class="token punctuation">,</span><span class="token property">&quot;method&quot;</span><span class="token operator">:</span><span class="token string">&quot;eth_syncing&quot;</span><span class="token punctuation">,</span><span class="token property">&quot;params&quot;</span><span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token property">&quot;id&quot;</span><span class="token operator">:</span><span class="token number">1</span><span class="token punctuation">}</span>' localhost<span class="token operator">:</span><span class="token number">8545</span>
+</code></pre></div><p>After connecting to mainnet <code>eth_syncing</code> will return something similar to:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;jsonrpc&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;2.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;id&quot;</span> <span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;result&quot;</span> <span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;startingBlock&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;0x0&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;currentBlock&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;0x2d0&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;highestBlock&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;0x66c0&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="scaling-pods"><a href="#scaling-pods" class="header-anchor">#</a> Scaling Pods</h2> <p>Depending on your network traffic you may need to scale you may need to scale your cluster up or down in Kubernetes with one command:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubernetes scale statefulset classic -n ethercluster --replicas<span class="token operator">=</span><span class="token number">4</span>
+</code></pre></div><p>This will increase replicas to 4 or decrease replicas to however many you desire.</p> <p>See it being created:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubernetes get all -n ethercluster
+</code></pre></div><p>Example output:</p> <div class="language- extra-class"><pre class="language-text"><code>NAME                                     READY   STATUS    RESTARTS   AGE
+pod/classic-0                            2/2     Running   0          10m
+pod/classic-1                            2/2     Running   0          10m
+pod/classic-2                            2/2     Running   0          10m
+pod/classic-3                            2/2     Running   0          1m
+
+NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)                                       AGE
+service/classic             LoadBalancer   10.00.00.00     109.01.01.01      8080:30003/TCP,8545:30002/TCP,443:30001/TCP   10m
+
+NAME                       READY   AGE
+statefulset.apps/classic   3/3     10m
+</code></pre></div><p>Notice you now have a <code>classic-3</code> pod being created and beginning to sync. You can do the same thing to scale it back to 3 by changing the previous command from 4 replicas to 3. Also, GKE does offer auto-scaling for you if needed, but that'll affect your billing if you don't monitor it consistently.</p> <p>In the next section, we will go over securing your endpoint with SSL when using it publicly. It's not really needed if you want to use RPC only internally within your own infrastructure.</p> <h2 id="ssl-configuration"><a href="#ssl-configuration" class="header-anchor">#</a> SSL Configuration</h2> <p>To setup SSL configuration you need:</p> <ul><li>a domain name</li> <li>SSL certificate for the domain name</li></ul> <p><code>Ethercluster.com</code> uses Namecheap and Namecheap has a guide on registering an SSL for you which will provide an:</p> <ul><li>SSL Key <code>.key</code></li> <li>SSL Certificate <code>.crt</code></li></ul> <p><strong>NOTE</strong> Setting up SSL for your Ethercluster is optional, but useful to expose your RPC publicly.</p> <h3 id="secrets"><a href="#secrets" class="header-anchor">#</a> Secrets</h3> <p>Now that we have our <code>domain-com.key</code> and <code>domain-com.crt</code>, we can create a Kubernetes secret for them so we can securely store it.</p> <p>If we have both files in a directory called <code>config</code>, then we can run the following command to instantiate them:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl tls tls-classic --key ./config/domain-com.key --cert ./config/domain-com.crt --namespace ethercluster 
+</code></pre></div><h3 id="ingress"><a href="#ingress" class="header-anchor">#</a> Ingress</h3> <p><a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" rel="noopener noreferrer">Ingress<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> allows us to route to different services to the outside via HTTP and HTTPS, as well as allow us to terminate TCP/SSL.</p> <p>We will need to create the ingress manifest file then instantiate it. After that, we need to configure the Health Checks in Google Cloud.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token function">vim</span> ingress.yml
+</code></pre></div><p>And input the following contents in ingress.yml:</p> <div class="language-yml extra-class"><pre class="language-yml"><code><span class="token key atrule">apiVersion</span><span class="token punctuation">:</span> extensions/v1beta1
+<span class="token key atrule">kind</span><span class="token punctuation">:</span> Ingress
+<span class="token key atrule">metadata</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> ingress<span class="token punctuation">-</span>ethercluster
+    <span class="token key atrule">namespace</span><span class="token punctuation">:</span> ethercluster
+    <span class="token key atrule">annotations</span><span class="token punctuation">:</span>
+        <span class="token key atrule">kubernetes.io/ingress.global-static-ip-name</span><span class="token punctuation">:</span> ethercluster<span class="token punctuation">-</span>address
+        <span class="token key atrule">kubernetes.io/ingress.allow-http</span><span class="token punctuation">:</span> <span class="token string">&quot;false&quot;</span>
+        <span class="token key atrule">kubernetes.io/ingress.class</span><span class="token punctuation">:</span> <span class="token string">&quot;gce&quot;</span>
+<span class="token key atrule">spec</span><span class="token punctuation">:</span>
+    <span class="token key atrule">tls</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">hosts</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> www.domain.com
+        <span class="token key atrule">secretName</span><span class="token punctuation">:</span> tls<span class="token punctuation">-</span>classic
+    <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+      <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> classic 
+      <span class="token key atrule">servicePort</span><span class="token punctuation">:</span> <span class="token number">8545</span>
+    <span class="token key atrule">rules</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">host</span><span class="token punctuation">:</span> www.domain.com
+      <span class="token key atrule">http</span><span class="token punctuation">:</span>
+        <span class="token key atrule">paths</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> <span class="token key atrule">path</span><span class="token punctuation">:</span> /
+          <span class="token key atrule">backend</span><span class="token punctuation">:</span>
+            <span class="token key atrule">serviceName</span><span class="token punctuation">:</span> classic
+            <span class="token key atrule">servicePort</span><span class="token punctuation">:</span> <span class="token number">8545</span>
+</code></pre></div><p>This specifies that we're creating an ingress that points to <code>ethercluster-address</code> (the static IP created in Terraform). It also assigns the host to the domains.com we added and provides</p> <p>It also assigns the host to the domain.com we added and provides the secretName as <code>tls-classic</code> as we created before. It wires to the backend to the serviceName <code>classic</code> at port 8545.</p> <p>Instantiate the ingress:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl apply -f ingress.yml
+</code></pre></div><p>Monitor progression:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl describe ingress ingress-ethercluster -n ethercluster
+</code></pre></div><p>While you monitor it, you need to head over to Google Cloud to set up the Health Checks. Reason is, it won't be exposed publicly if the health checks aren't passed on Google Cloud, and they're not yet sure how to check the health status of Parity.</p> <p>We do that by going over to Google Cloud, and then to Kubernetes Engine section on the left, and then click on Services as shown below:</p> <img width="775" alt="ingress" src="https://user-images.githubusercontent.com/10556209/97757447-b954f200-1aca-11eb-9a22-393b4ab3dd71.png"> <p>We click on the Ingress we created earlier here, and then try to determine the port number for your classic service. It's the port number assigned by Kubernetes. You can find it by running the following:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>kubectl get <span class="token function">service</span> classic -n ethercluster
+</code></pre></div><p>It'll return what we saw earlier:</p> <div class="language- extra-class"><pre class="language-text"><code>NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP       PORT(S)                                       AGE
+service/classic             LoadBalancer   10.00.00.00   &lt;pending&gt;      8080:30003/TCP,8545:30002/TCP,443:30001/TCP   1m
+</code></pre></div><p>If you notice under <code>PORT(S)</code>, you'll see the port <code>8545:30002</code>. The 30002 is the one assigned by Kubernetes for the abstracted 8545. That's the port you'll need to look for under the Ingress section, as shown below: list-ingress</p> <p>Click on the appropriate one, which will lead you to its page.</p> <p>Scroll down until you find the health check section. It has a link under it that you must click as well.</p> <p>Now, you're taken to the Health Check page.</p> <p>It checks Parity's 8545 port at actual port 30002. But it does the health check on this endpoint <code>/</code> Parity health checks happen at <code>/api/health</code>.</p> <p>Configure it accordingly as shown below, then save it.</p> <img width="478" alt="health_check" src="https://user-images.githubusercontent.com/10556209/97757625-1e104c80-1acb-11eb-9af3-926dd9554312.png"> <p>Now, wait about 10-15 minutes for the health checks to pass. You should be able to now use your RPC endpoint over SSL.</p> <p>If you have any issues, you can always use <code>kubectl describe</code> to debug your ingress.</p> <p>I hope you enjoyed this guide and the cool tools given to us by the Cloud, Kubernetes and Terraform.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/docs/concepts.html" class="prev">
+        Core Concepts
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.973c1df1.js" defer></script><script src="/assets/js/2.b53210af.js" defer></script><script src="/assets/js/14.942f3b6f.js" defer></script>
+  </body>
+</html>
