@@ -1,4 +1,7 @@
-# Getting Started
+---
+id: doc3
+title: Build your first Ethercluster
+---
 
 This guide will help you build your own Ethereum Classic API service using Ethercluster. This guide currently features Ethercluster deployment on Google Cloud Platform.
 
@@ -6,13 +9,13 @@ This guide will help you build your own Ethereum Classic API service using Ether
 
 - Signup for a [Google Cloud](https://cloud.google.com/) account and [create a new project](https://console.cloud.google.com/projectcreate). You can conveniently name your project, `ethercluster`.
 
-<img width="540" alt="gcp_project" src="https://user-images.githubusercontent.com/10556209/96285459-9c85ce00-0fa4-11eb-9407-277b6ee700ca.png">
+![](https://user-images.githubusercontent.com/10556209/96285459-9c85ce00-0fa4-11eb-9407-277b6ee700ca.png)
 
 - Setup [billing](https://cloud.google.com/billing/docs/how-to/modify-project) if you're going to pursue making your Ethercluster. 
 
 - Enable __Compute Engine API__, __Cloud Shell API__, and __Kubernetes Engine API__ which can be found in the [Marketplace](https://console.cloud.google.com/apis?_ga=2.172155431.56694028.1602866660-1600774775.1602866660). For example: 
 
-<img width="497" alt="gcp_enable_api" src="https://user-images.githubusercontent.com/10556209/96285814-0e5e1780-0fa5-11eb-95ff-a3a3d571bf0a.png">
+![](https://user-images.githubusercontent.com/10556209/96285814-0e5e1780-0fa5-11eb-95ff-a3a3d571bf0a.png)
 
 - [Setup Credentials](https://cloud.google.com/docs/authentication/getting-started) which will generate a JSON file for you to download. This will be used to easily authenticate into Google Cloud from your local terminal.
 
@@ -739,7 +742,7 @@ While you monitor it, you need to head over to Google Cloud to set up the Health
 
 We do that by going over to Google Cloud, and then to Kubernetes Engine section on the left, and then click on Services as shown below:
 
-<img width="775" alt="ingress" src="https://user-images.githubusercontent.com/10556209/97757447-b954f200-1aca-11eb-9a22-393b4ab3dd71.png">
+![](https://user-images.githubusercontent.com/10556209/97757447-b954f200-1aca-11eb-9a22-393b4ab3dd71.png)
 
 We click on the Ingress we created earlier here, and then try to determine the port number for your classic service. It's the port number assigned by Kubernetes. You can find it by running the following:
 
@@ -766,7 +769,7 @@ It checks Parity's 8545 port at actual port 30002. But it does the health check 
 
 Configure it accordingly as shown below, then save it.
 
-<img width="478" alt="health_check" src="https://user-images.githubusercontent.com/10556209/97757625-1e104c80-1acb-11eb-9af3-926dd9554312.png">
+![](https://user-images.githubusercontent.com/10556209/97757625-1e104c80-1acb-11eb-9af3-926dd9554312.png)
 
 Now, wait about 10-15 minutes for the health checks to pass. You should be able to now use your RPC endpoint over SSL.
 

@@ -1,4 +1,7 @@
-# Core Concepts
+---
+id: doc2
+title: Core Concepts
+---
 
 Ethercluster uses the latest dev-ops and infra-as-code tools which are used by plenty of companies and startups worldwide.
 
@@ -24,6 +27,7 @@ In order to learn about Kubernetes, there's a great tutorial [here](https://kube
 What we will be doing in this entire guide is describe how we are building our specific cluster and how we design it with references to external source materials in order to learn more.
 
 ### Quick Overview
+
 We know already that containerization (like Docker) helps us package software to allow for deploying new versions of the applications 24/7.
 
 Note: If you're not familiar with Docker, there's a great tutorial [here](https://docker-curriculum.com/). We will quickly brush over Docker later when going over a container we will be using in Kubernetes.
@@ -32,19 +36,19 @@ What Kubernetes enables us to do is make sure those containerized applications w
 
 Essentially, the idea is to first create a cluster (images shown below taken from Kubernetes tutorial above for demonstration).
 
-<img width="410" alt="cluster_img" src="https://user-images.githubusercontent.com/10556209/94851027-703b5080-03ed-11eb-9a44-8fe28bad6fa4.png">
+![](https://user-images.githubusercontent.com/10556209/94851027-703b5080-03ed-11eb-9a44-8fe28bad6fa4.png)
 
 This is essentially what we did in the previous section with Terraform and GKE, instantiating our node pools for our cluster.
 
 Next, we deploy our containerized app to the cluster as shown below.
 
-<img width="558" alt="deploy_to_cluster" src="https://user-images.githubusercontent.com/10556209/94851139-a547a300-03ed-11eb-868b-e18dcfaadf59.png">
+![](https://user-images.githubusercontent.com/10556209/94851139-a547a300-03ed-11eb-868b-e18dcfaadf59.png)
 
 This is what we will be doing next.
 
 We can also scale our containerized app on Kubernetes by having more of it running.
 
-<img width="521" alt="scale_cluster" src="https://user-images.githubusercontent.com/10556209/94851187-b5f81900-03ed-11eb-97c4-3cadf11fdba6.png">
+![](https://user-images.githubusercontent.com/10556209/94851187-b5f81900-03ed-11eb-97c4-3cadf11fdba6.png)
 
 ### Kubernetes Cluster
 
@@ -57,7 +61,7 @@ From a high level, a Kubernetes cluster consists of two things:
   
 A figure is shown below:
 
-<img width="447" alt="master_node" src="https://user-images.githubusercontent.com/10556209/94851277-d7f19b80-03ed-11eb-8696-e17e90895bc4.png">
+![](https://user-images.githubusercontent.com/10556209/94851277-d7f19b80-03ed-11eb-8696-e17e90895bc4.png)
 
 The master is essentially in charge of managing the cluster and the nodes, including scheduling applications, scaling and rolling out new updates.
 
@@ -69,19 +73,19 @@ A node is basically a VM or physical computer serving as a worker for the master
 
 __Deployments__ are configurations you set up to deploy and application, which instructs Kubernetes how to create and update your app. Kubernetes master configures and deploys application to individual nodes on the cluster. In the case of Node failure or going offline, Master can redeploy the application on an instance at an available node, assuring a self-healing process for the cluster.
 
-<img width="465" alt="deployment" src="https://user-images.githubusercontent.com/10556209/94851441-12f3cf00-03ee-11eb-84d5-211b8820271f.png">
+![](https://user-images.githubusercontent.com/10556209/94851441-12f3cf00-03ee-11eb-84d5-211b8820271f.png)
 
 #### Pods
 
 When you create a Deployment, Kubernetes creates a __Pod__ to host your containerized application. Pods are abstractions by Kubernetes that host one or more application containers as well as shared resources between them such as shared storage (__Volumes__), networking and unique cluster IPs (__Services__), and instructions on how to run it (container versions and ports to use).
 
-<img width="463" alt="pods" src="https://user-images.githubusercontent.com/10556209/94851535-31f26100-03ee-11eb-9fe7-298ab10a2eb0.png">
+![](https://user-images.githubusercontent.com/10556209/94851535-31f26100-03ee-11eb-9fe7-298ab10a2eb0.png)
 
 #### Nodes
 
 Pods always run on Nodes. Each Node comes with __Kubelet__, a process for communication between the node and master, as well as a container system like __Docker__.
 
-<img width="455" alt="node" src="https://user-images.githubusercontent.com/10556209/94851590-46cef480-03ee-11eb-8959-821a47619d28.png">
+![](https://user-images.githubusercontent.com/10556209/94851590-46cef480-03ee-11eb-8959-821a47619d28.png)
 
 #### Services
 A Service in Kubernetes is an abstraction that defines a policy by which your Pods can be accessed, allowing them to receive traffic.
