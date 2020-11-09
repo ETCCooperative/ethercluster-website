@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{61:function(e){e.exports=JSON.parse('{"allTagsPath":"/ethercluster-website/blog/tags","slug":"welcome","name":"welcome","count":1,"permalink":"/ethercluster-website/blog/tags/welcome"}')}}]);
