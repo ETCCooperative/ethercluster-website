@@ -2,7 +2,8 @@ module.exports = {
   title: 'Ethercluster',
   tagline: 'Open Source Ethereum-based Cloud Architecture.',
   url: 'https://etccooperative.github.io/ethercluster-site',
-  baseUrl: '/ethercluster-website/',
+  // baseUrl: '/ethercluster-website/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
   organizationName: 'etccooperative', // Usually your GitHub org/user name.
